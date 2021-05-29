@@ -1,0 +1,29 @@
+/*Bill Gates is on one of his philanthropic journeys to a village in Utopia. He has brought a box of packets of candies and would like to distribute one 
+packet to each of the children. Each of the packets contains a number of candies. He wants to minimize the
+cumulative difference in the number of candies in the packets he hands out. This is called the unfairness sum. Determine the minimum unfairness sum achievable.*/
+
+
+
+import java.util.*;
+
+class Result {
+
+   public static void main(String args[] )  {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int k=sc.nextInt();
+        int a[]=new int[n];
+        for(int i=0;i<n;i++){
+            a[i]=sc.nextInt();
+        }
+        Arrays.sort(a);
+        int sum=0;
+        for(int i=0;i<k;i++){
+            for(int j=i+1;j<k;j++){
+                sum+=(int)Math.abs(a[i]-a[j]);
+            }
+        }
+        System.out.println(sum);
+
+    }
+}
